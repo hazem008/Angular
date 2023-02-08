@@ -1,0 +1,45 @@
+<html>
+ <h3>Exercice1</h3> 
+<header> 
+  <h1>Offre d'emploi</h1>  
+  
+</header>
+
+  <div>
+  <p>Nombre d'offres non clôturées : {{ nombreOffresNonCloturees }}</p>
+  <button type="button" class="btn btn-info" (click)="Bilan()">Bilan</button>
+
+  </div>
+  
+ 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Reference</th>
+        <th>Titre</th>
+        <th>Entreprise</th>
+        <th>Etat</th>
+       
+      </tr>
+    </thead>
+  
+    
+    <tbody *ngFor="let p of listEmploi, let i=index">
+      <tr>
+        <td>{{p.reference}}</td>
+        <td>{{p.titre}}</td>
+        <td>{{p.entreprise}}</td>
+        <td>{{p.etat}}</td>
+      
+
+        <td><button type="button" class="btn btn-success" [disabled]="p.etat==false">Postuler</button></td>
+
+      </tr>
+    </tbody>
+  </table>
+        
+
+  <h3>Exercice2</h3> 
+
+
+</html>
