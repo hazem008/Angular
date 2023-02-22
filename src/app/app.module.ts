@@ -11,6 +11,7 @@ import { ProductComponent } from './product/product.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormComponent } from './form/form.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
+import { DrivenFormComponent } from './driven-form/driven-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DetailProductComponent } from './detail-product/detail-product.componen
     NavbarComponent,
     FormComponent,
     DetailProductComponent,
+    DrivenFormComponent,
     
   ],
   imports: [

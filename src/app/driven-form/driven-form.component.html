@@ -1,0 +1,80 @@
+<div class="container h-100">
+    <div class=" row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6 ">
+            <form novalidate #SubmitForm="ngForm">
+                <fieldset class="hazem ">
+                    <legend>Informations générales</legend>
+                    <div class="form-group">
+                        <label> Nom</label>
+                        <input type="text" class="form-control" name="nom" placeholder="Enter Nom" ngModel required
+                            #l="ngModel">
+
+                        <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+                            Nom is required field
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email" placeholder="Hazem.Kharroubi@com" ngModel
+                            required #e="ngModel" pattern="[a-zA-Z0-9]+.[a-zA-Z0-9]+@[a-zA-Z0-9]{3}">
+
+                        <div class="alert alert-danger" *ngIf="e.invalid && e.touched">
+                            <div *ngIf="e.errors?.['required']">Email is required field </div>
+                            <div *ngIf="e.errors?.['pattern']">Email dosen't seem correct </div>
+                        </div>
+                    </div>
+                    
+
+                    <form novalidate #SubmitForm="ngForm" >
+                        <fieldset class="hazem mt-4">
+                            <legend style="font-size: 23px;">Informations de payement</legend>
+                            <div class="form-group">
+                                <label>Type de carte</label>
+                                <input type="text" class="form-control" name="typeCarte" placeholder="Enter Price"
+                                    ngModel required #c="ngModel">
+
+                                <div class="alert alert-danger" *ngIf="c.invalid && c.touched">
+                                    Price is required field
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Numéro carte</label>
+                                <input type="text" class="form-control" name="numeroCarte"
+                                    placeholder="Enter card number" ngModel required maxlength="16" pattern="[0-9]{16}"
+                                    #t="ngModel">
+                                <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+                                    <div *ngIf="t.errors?.['required']">Card is required field </div>
+                                    <div *ngIf="t.errors?.['pattern']">Card number must contain 16 numbers</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date expiration</label>
+                                <input type="date" class="form-control" name="dateExpiration"
+                                    placeholder=" Enter Quantity" ngModel required #d="ngModel">
+                            </div>
+                            <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+                                Date expiration is required field
+                            </div>
+                            <div class="form-group">
+                                <label>Code</label>
+                                <input type="text" class="form-control" name="Code" placeholder=" Enter Quantity"
+                                    ngModel #code="ngModel" [hidden]="t.invalid || d.invalid || c.invalid">
+                            </div>
+                            <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+                                Code is required field
+                            </div>
+
+                        </fieldset>
+                    </form>
+
+
+
+                    <button type="submit" class="btn btn-primary mt-3"
+                        [disabled]="SubmitForm.form.invalid">Ajouter</button>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

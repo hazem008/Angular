@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailProductComponent } from './detail-product/detail-product.component';
+import { DrivenFormComponent } from './driven-form/driven-form.component';
 import { FormComponent } from './form/form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'product/:id', component:DetailProductComponent},
   {path:'offres',component:OffresEmploiComponent},
   {path:'AddProduct',component:FormComponent},
+  {path:'Formulaire',component:DrivenFormComponent},
   {path:'**',component:NotFoundComponent}
 ];
 
