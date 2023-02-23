@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 import { DrivenFormComponent } from './driven-form/driven-form.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './add-Product/form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
 import { ProductComponent } from './product/product.component';

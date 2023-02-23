@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Core/model/Product';
-
+import { ProductService } from '../services/product.service';
+import { CalculService } from '../services/calcul.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -9,14 +10,13 @@ import { Product } from '../Core/model/Product';
 export class ProductComponent implements OnInit {
   title: String = "welcome";
   listProduct!: Product[];
-  constructor() { }
+  alertStock!:number;
+  constructor(private productService:ProductService, private calculServ:CalculService) { }
 
   ngOnInit(): void {
-
-    this.listProduct = [
-      { id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0 },
-      { id: 2, title: "T-shirt 2", price: 21, quantity: 10, like: 0 },
-      { id: 3, title: "T-shirt 3", price: 16, quantity: 8, like: 0 },]
+    this.listProduct=this.productService.Listproducts;
+    this.alertStock=this.calculServ.getNumberOf(this.listProduct,'quantity',0)
+    
   }
 
   buy(p: number) {
@@ -26,6 +26,7 @@ export class ProductComponent implements OnInit {
   like(l: number) {
     this.listProduct[l].like++;
   }
+  
 
 }
 

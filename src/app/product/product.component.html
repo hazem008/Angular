@@ -1,4 +1,4 @@
-
+{{alertStock}}
 <div class="row">
     <div class="col-md-4" *ngFor="let i of listProduct, let p=index">
         <div class="card shadow-lg" style="width: 18rem; text-align: center00; border-color: blue;">
@@ -11,7 +11,7 @@
                 <div>
                 <button class="btn btn-primary m-lg-2" (click)="like(p)">Like</button>
                 <button class="btn btn-success m-lg-2" (click)="buy(p)" [disabled]="i.quantity == 0" >Buy</button>
-                <button class="btn btn-info m-lg-2" [routerLink]="['/product',i.id]">Details</button>
+                <button class="btn btn-info m-lg-2" [routerLink]="['/product',i.id]" >Details</button>
                 </div>
                 
             </div>
